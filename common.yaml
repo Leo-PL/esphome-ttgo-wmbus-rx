@@ -60,10 +60,6 @@ font:
     id: my_font
     size: 16
 
-display:
-#    lambda: |-
-#      it.print(0, 0, id(my_font), "Hello World!");
-
 wmbus_radio:
   on_frame:
     - then:
@@ -74,4 +70,10 @@ wmbus_radio:
               - delay: 100ms
               - output.turn_off: status_led
               - delay: 100ms
+
+interval:
+  - interval: 5s
+    then:
+      - display.page.show_next: my_display
+      - component.update: my_display
 

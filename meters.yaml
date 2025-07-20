@@ -22,6 +22,7 @@ wmbus_meter:
 sensor:
   - platform: wmbus_meter
     parent_id: warm_water_meter
+    id: warm_water_total
     field: total_m3
     device_class: water
     name: Warm water - total
@@ -36,6 +37,7 @@ sensor:
 
   - platform: wmbus_meter
     parent_id: cool_water_meter
+    id: cool_water_total
     field: total_m3
     device_class: water
     name: Cool water - total
@@ -50,6 +52,7 @@ sensor:
 
   - platform: wmbus_meter
     parent_id: electricity_meter
+    id: voltage_v1
     field: voltage_at_phase_1_v
     name: Electricity - Voltage at phase 1
     accuracy_decimals: 0
@@ -58,6 +61,7 @@ sensor:
     state_class: measurement
   - platform: wmbus_meter
     parent_id: electricity_meter
+    id: voltage_v2
     field: voltage_at_phase_2_v
     name: Electricity - Voltage at phase 2
     accuracy_decimals: 0
@@ -66,6 +70,7 @@ sensor:
     state_class: measurement
   - platform: wmbus_meter
     parent_id: electricity_meter
+    id: voltage_v3
     field: voltage_at_phase_3_v
     name: Electricity - Voltage at phase 3
     accuracy_decimals: 0
@@ -74,6 +79,7 @@ sensor:
     state_class: measurement
   - platform: wmbus_meter
     parent_id: electricity_meter
+    id: power_cons
     field: current_power_consumption_kw
     name: Electricity - current power consumption
     accuracy_decimals: 0
@@ -84,6 +90,7 @@ sensor:
       - multiply: 1000
   - platform: wmbus_meter
     parent_id: electricity_meter
+    id: energy_cons_t1
     field: total_energy_consumption_tariff_1_kwh
     name: Electricity - Tariff 1 energy consumption
     accuracy_decimals: 3
@@ -92,6 +99,7 @@ sensor:
     state_class: total_increasing
   - platform: wmbus_meter
     parent_id: electricity_meter
+    id: energy_cons_t2
     field: total_energy_consumption_tariff_2_kwh
     name: Electricity - Tariff 2 energy consumption
     accuracy_decimals: 3
@@ -100,6 +108,7 @@ sensor:
     state_class: total_increasing
   - platform: wmbus_meter
     parent_id: electricity_meter
+    id: energy_cons_t3
     field: total_energy_consumption_tariff_3_kwh
     name: Electricity - Tariff 3 energy consumption
     accuracy_decimals: 3
@@ -108,6 +117,7 @@ sensor:
     state_class: total_increasing
   - platform: wmbus_meter
     parent_id: electricity_meter
+    id: power_prod
     field: current_power_production_kw
     name: Electricity - current power production
     accuracy_decimals: 0
@@ -118,6 +128,7 @@ sensor:
       - multiply: 1000
   - platform: wmbus_meter
     parent_id: electricity_meter
+    id: energy_prod_t1
     field: total_energy_production_tariff_1_kwh
     name: Electricity - Tariff 1 energy production
     accuracy_decimals: 3
@@ -126,6 +137,7 @@ sensor:
     state_class: total_increasing
   - platform: wmbus_meter
     parent_id: electricity_meter
+    id: energy_prod_t2
     field: total_energy_production_tariff_2_kwh
     name: Electricity - Tariff 2 energy production
     accuracy_decimals: 3
@@ -134,6 +146,7 @@ sensor:
     state_class: total_increasing
   - platform: wmbus_meter
     parent_id: electricity_meter
+    id: energy_prod_t3
     field: total_energy_production_tariff_3_kwh
     name: Electricity - Tariff 3 energy production
     accuracy_decimals: 3

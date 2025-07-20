@@ -1,0 +1,34 @@
+- id: page1
+  lambda: |-
+    it.print(0, 0, id(my_font), "Cool water:");
+    it.printf(0, 16, id(my_font), "%.02f m3", id(cool_water_total).state);
+- id: page2
+  lambda: |-
+    it.print(0, 0, id(my_font), "Warm water:");
+    it.printf(0, 16, id(my_font), "%.02f m3", id(warm_water_total).state);
+- id: page3
+  lambda: |-
+    it.print(0, 0, id(my_font), "Voltage:");
+    it.printf(0, 16, id(my_font), "V1: %.00f V", id(voltage_v1).state);
+    it.printf(0, 32, id(my_font), "V2: %.00f V", id(voltage_v2).state);
+    it.printf(0, 48, id(my_font), "V3: %.00f V", id(voltage_v3).state);
+- id: page4
+  lambda: |-
+    it.print(0, 0, id(my_font), "Power:");
+    it.printf(0, 16, id(my_font), "Cn: %.00f W", id(power_cons).state);
+    it.printf(0, 32, id(my_font), "Pr: %.00f W", id(power_prod).state);
+- id: page5
+  lambda: |-
+    it.print(0, 0, id(my_font), "Energy T1:");
+    it.printf(0, 16, id(my_font), "Cn: %.03f kWh", id(energy_cons_t1).state);
+    it.printf(0, 32, id(my_font), "Pr: %.03f kWh", id(energy_prod_t1).state);
+- id: page6
+  lambda: |-
+    it.print(0, 0, id(my_font), "Energy T2:");
+    it.printf(0, 16, id(my_font), "Cn: %.03f kWh", id(energy_cons_t2).state);
+    it.printf(0, 32, id(my_font), "Pr: %.03f kWh", id(energy_prod_t2).state);
+- id: page7
+  lambda: |-
+    it.print(0, 0, id(my_font), "Energy T3:");
+    it.printf(0, 16, id(my_font), "Cn: %.03f kWh", id(energy_cons_t3).state);
+    it.printf(0, 32, id(my_font), "Pr: %.03f kWh", id(energy_prod_t3).state);
