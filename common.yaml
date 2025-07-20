@@ -58,7 +58,7 @@ web_server:
 font:
   - file: "Hack-Regular.ttf"
     id: my_font
-    size: 16
+    size: 14
 
 wmbus_radio:
   on_frame:
