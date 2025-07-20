@@ -1,0 +1,162 @@
+wmbus_meter:
+  - id: warm_water_meter
+    meter_id: !secret warm_water_meter_id
+    type: mkradio4
+    key: "00000000000000000000000000000000"
+  - id: cool_water_meter
+    meter_id: !secret cool_water_meter_id
+    type: mkradio4
+    key: "00000000000000000000000000000000"
+  - id: electricity_meter
+    meter_id: !secret electricity_meter_id
+    type: amiplus
+    key: !secret electricity_meter_key
+    mode:
+      - T1
+      - C1
+#  - id: heat_meter
+#    meter_id: !secret heat_meter_id
+#    type: qheat_55_us
+#    key: !secret heat_meter_key
+
+sensor:
+  - platform: wmbus_meter
+    parent_id: warm_water_meter
+    field: total_m3
+    device_class: water
+    name: Warm water - total
+    accuracy_decimals: 2
+    state_class: total_increasing
+    unit_of_measurement: "m³"
+  - platform: wmbus_meter
+    parent_id: warm_water_meter
+    field: rssi_dbm
+    name: Warm water - meter RSSI
+    unit_of_measurement: "dBm"
+
+  - platform: wmbus_meter
+    parent_id: cool_water_meter
+    field: total_m3
+    device_class: water
+    name: Cool water - total
+    accuracy_decimals: 2
+    state_class: total_increasing
+    unit_of_measurement: "m³"
+  - platform: wmbus_meter
+    parent_id: cool_water_meter
+    field: rssi_dbm
+    name: Cool water - meter RSSI
+    unit_of_measurement: "dBm"
+
+  - platform: wmbus_meter
+    parent_id: electricity_meter
+    field: voltage_at_phase_1_v
+    name: Electricity - Voltage at phase 1
+    accuracy_decimals: 0
+    device_class: voltage
+    unit_of_measurement: V
+    state_class: measurement
+  - platform: wmbus_meter
+    parent_id: electricity_meter
+    field: voltage_at_phase_2_v
+    name: Electricity - Voltage at phase 2
+    accuracy_decimals: 0
+    device_class: voltage
+    unit_of_measurement: V
+    state_class: measurement
+  - platform: wmbus_meter
+    parent_id: electricity_meter
+    field: voltage_at_phase_3_v
+    name: Electricity - Voltage at phase 3
+    accuracy_decimals: 0
+    device_class: voltage
+    unit_of_measurement: V
+    state_class: measurement
+  - platform: wmbus_meter
+    parent_id: electricity_meter
+    field: current_power_consumption_kw
+    name: Electricity - current power consumption
+    accuracy_decimals: 0
+    device_class: power
+    unit_of_measurement: W
+    state_class: measurement
+    filters:
+      - multiply: 1000
+  - platform: wmbus_meter
+    parent_id: electricity_meter
+    field: total_energy_consumption_tariff_1_kwh
+    name: Electricity - Tariff 1 energy consumption
+    accuracy_decimals: 3
+    device_class: energy
+    unit_of_measurement: kWh
+    state_class: total_increasing
+  - platform: wmbus_meter
+    parent_id: electricity_meter
+    field: total_energy_consumption_tariff_2_kwh
+    name: Electricity - Tariff 2 energy consumption
+    accuracy_decimals: 3
+    device_class: energy
+    unit_of_measurement: kWh
+    state_class: total_increasing
+  - platform: wmbus_meter
+    parent_id: electricity_meter
+    field: total_energy_consumption_tariff_3_kwh
+    name: Electricity - Tariff 3 energy consumption
+    accuracy_decimals: 3
+    device_class: energy
+    unit_of_measurement: kWh
+    state_class: total_increasing
+  - platform: wmbus_meter
+    parent_id: electricity_meter
+    field: current_power_production_kw
+    name: Electricity - current power production
+    accuracy_decimals: 0
+    device_class: power
+    unit_of_measurement: W
+    state_class: measurement
+    filters:
+      - multiply: 1000
+  - platform: wmbus_meter
+    parent_id: electricity_meter
+    field: total_energy_production_tariff_1_kwh
+    name: Electricity - Tariff 1 energy production
+    accuracy_decimals: 3
+    device_class: energy
+    unit_of_measurement: kWh
+    state_class: total_increasing
+  - platform: wmbus_meter
+    parent_id: electricity_meter
+    field: total_energy_production_tariff_2_kwh
+    name: Electricity - Tariff 2 energy production
+    accuracy_decimals: 3
+    device_class: energy
+    unit_of_measurement: kWh
+    state_class: total_increasing
+  - platform: wmbus_meter
+    parent_id: electricity_meter
+    field: total_energy_production_tariff_3_kwh
+    name: Electricity - Tariff 3 energy production
+    accuracy_decimals: 3
+    device_class: energy
+    unit_of_measurement: kWh
+    state_class: total_increasing
+  - platform: wmbus_meter
+    parent_id: electricity_meter
+    field: rssi_dbm
+    name: Electricity - meter RSSI
+    unit_of_measurement: dBm
+
+#  - platform: wmbus_meter
+#    parent_id: heat_meter
+#    field: total_heating_kwh
+#    device_class: energy
+#    unit_of_measurement: kWh
+#    name: Heat - total
+#    accuracy_decimals: 4
+#    state_class: total_increasing
+#  - platform: wmbus_meter
+#    parent_id: heat_meter
+#    field: rssi_dbm
+#    name: Heat - meter RSSI
+#    unit_of_measurement: dBm
+
