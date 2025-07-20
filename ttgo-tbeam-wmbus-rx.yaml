@@ -30,6 +30,7 @@ display:
     id: my_display
     model: "SH1106 128x64"
     address: 0x3C
+    contrast: 10%
     pages: !include { file: pages.yaml }
 
 spi:
