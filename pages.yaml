@@ -36,3 +36,10 @@
 #  lambda: |-
 #    it.print(0, 0, id(my_font), "Heating:");
 #    it.printf(0, 14, id(my_font), "%.04f kWh", id(heating_total).state);
+- id: page9
+  lambda: |-
+    it.print(0, 0, id(my_font), "RSSI:");
+    it.printf(0, 14, id(my_font), "WW: %.00f dBm", id(warm_water_rssi).state);
+    it.printf(0, 28, id(my_font), "CW: %.00f dBm", id(cool_water_rssi).state);
+    it.printf(0, 42, id(my_font), "El: %.00f dBm", id(electricity_rssi).state);
+#    it.printf(0, 56, id(my_font), "Ht: %.00f dBm", id(heat_rssi).state);

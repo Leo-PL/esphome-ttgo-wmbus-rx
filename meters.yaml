@@ -31,6 +31,7 @@ sensor:
     unit_of_measurement: "m³"
   - platform: wmbus_meter
     parent_id: warm_water_meter
+    id: warm_water_rssi
     field: rssi_dbm
     name: Warm water - meter RSSI
     unit_of_measurement: "dBm"
@@ -46,6 +47,7 @@ sensor:
     unit_of_measurement: "m³"
   - platform: wmbus_meter
     parent_id: cool_water_meter
+    id: cool_water_rssi
     field: rssi_dbm
     name: Cool water - meter RSSI
     unit_of_measurement: "dBm"
@@ -155,6 +157,7 @@ sensor:
     state_class: total_increasing
   - platform: wmbus_meter
     parent_id: electricity_meter
+    id: electricity_rssi
     field: rssi_dbm
     name: Electricity - meter RSSI
     unit_of_measurement: dBm
@@ -170,6 +173,7 @@ sensor:
 #    state_class: total_increasing
 #  - platform: wmbus_meter
 #    parent_id: heat_meter
+#    id: heat_rssi
 #    field: rssi_dbm
 #    name: Heat - meter RSSI
 #    unit_of_measurement: dBm
