@@ -32,3 +32,7 @@
     it.print(0, 0, id(my_font), "Energy T3:");
     it.printf(0, 14, id(my_font), "Cn: %.02f kWh", id(energy_cons_t3).state);
     it.printf(0, 28, id(my_font), "Pr: %.02f kWh", id(energy_prod_t3).state);
+#- id: page8
+#  lambda: |-
+#    it.print(0, 0, id(my_font), "Heating:");
+#    it.printf(0, 14, id(my_font), "%.04f kWh", id(heating_total).state);

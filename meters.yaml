@@ -161,6 +161,7 @@ sensor:
 
 #  - platform: wmbus_meter
 #    parent_id: heat_meter
+#    id: heating_total
 #    field: total_heating_kwh
 #    device_class: energy
 #    unit_of_measurement: kWh
