@@ -8,7 +8,7 @@ dashboard_import:
 #####  Therefore, it is advisable to follow the information on the site of the author of the software:
 #####  https://github.com/SzczepanLeon/esphome-components
 external_components:
-  - source: github://SzczepanLeon/esphome-components@main
+  - source: github://SzczepanLeon/esphome-components@381e3993fcffbdf0b566ff76d15d4829f3dc9b1f
 
 mdns:
   disabled: false
