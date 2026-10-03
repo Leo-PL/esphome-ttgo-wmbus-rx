@@ -8,7 +8,12 @@ dashboard_import:
 #####  Therefore, it is advisable to follow the information on the site of the author of the software:
 #####  https://github.com/SzczepanLeon/esphome-components
 external_components:
-  - source: github://SzczepanLeon/esphome-components@381e3993fcffbdf0b566ff76d15d4829f3dc9b1f
+  - source: github://SzczepanLeon/esphome-components@381afe89f39f8a7aaaae6330f214d3b4f59785b1
+    components:
+    - socket_transmitter
+    - wmbus_common
+    - wmbus_radio
+    - wmbus_meter
 
 mdns:
   disabled: false
@@ -70,6 +75,9 @@ wmbus_radio:
               - delay: 100ms
               - output.turn_off: status_led
               - delay: 100ms
+
+wmbus_common:
+  drivers: all
 
 interval:
   - interval: 5s
